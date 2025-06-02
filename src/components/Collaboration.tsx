@@ -6,15 +6,15 @@ import files from "../assets/images/files.svg";
 
 const Collaboration = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full my-6 px-6 py-12 bg-white relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center w-full my-6 px-4 sm:px-6 lg:px-8 py-12 bg-white relative overflow-hidden">
       {/* Title */}
-      <h1 className="text-center text-3xl md:text-4xl font-bold mb-12 z-10">
+      <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 z-10 px-4">
         Worksy Delivers Complete Team{" "}
         <span className="text-[#6629DE]">Collaboration</span>
       </h1>
 
       {/* Top 3 cards */}
-      <div className="flex justify-center gap-6 mb-8 z-10 max-w-[1800px] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 md:mb-8 z-10 w-full max-w-[1800px]">
         <Card
           icon={calender}
           title="calendar"
@@ -32,8 +32,8 @@ const Collaboration = () => {
         />
       </div>
 
-      {/* Bottom 2 cards (larger width) */}
-      <div className="flex flex-wrap justify-center gap-6 z-10">
+      {/* Bottom 2 cards */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-[1800px] z-10">
         <Card
           icon={channel}
           title="channel"
@@ -48,8 +48,8 @@ const Collaboration = () => {
         />
       </div>
 
-      {/* Background Shape (smaller SVG) */}
-      <div className="absolute bottom-10 right-0 -z-0 w-full max-w-[700px] opacity-90">
+      {/* Background Shape */}
+      <div className="absolute bottom-0 right-0 -z-0 w-full max-w-[700px] opacity-90 pointer-events-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 986 752"
@@ -86,14 +86,17 @@ const Card = ({
   return (
     <div
       className={`${
-        wide ? "max-w-[700px]" : "max-w-[460px] flex-shrink-0 flex-grow-0"
-      } h-[240px] rounded-2xl ${bg} p-6 shadow-md flex flex-col justify-start`}
+        wide ? "col-span-1 lg:col-span-1" : "col-span-1"
+      } min-h-[240px] rounded-2xl ${bg} p-6 shadow-md hover:shadow-lg transition-shadow duration-300
+      transform hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-300`}
     >
       <div className="flex items-center gap-3 mb-4">
-        <img src={icon} alt={`${title} icon`} className="w-8 h-8" />
-        <h2 className="text-[#6629DE] text-xl font-bold capitalize">{title}</h2>
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#6629DE]/10">
+          <img src={icon} alt={`${title} icon`} className="w-6 h-6" />
+        </div>
+        <h2 className="text-[#6629DE] text-lg sm:text-xl font-bold capitalize">{title}</h2>
       </div>
-      <p className="text-[18px] text-black leading-snug">{description}</p>
+      <p className="text-base sm:text-lg text-black/80 leading-relaxed">{description}</p>
     </div>
   );
 };
