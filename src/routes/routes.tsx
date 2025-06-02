@@ -5,15 +5,19 @@ import Home from "../pages/Home";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
 const Layout = () => {
-  return<>
-    <Navbar />
-    <Outlet />
-    <Footer />
-  </>
-}
-
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+        <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+          <Outlet />
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 const router = createBrowserRouter([
   // {
@@ -40,6 +44,5 @@ const router = createBrowserRouter([
   },
   
 ]);
-
 
 export default router;

@@ -3,12 +3,12 @@ import BannerImage from "../assets/images/BannerImage.svg";
 
 const Banner = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-around w-full px-4 sm:px-6 lg:px-8 pb-8 lg:pb-16 gap-8 lg:gap-12 mt-[80px]">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
       <div className="w-full lg:w-1/2 max-w-[600px] order-2 lg:order-1">
         <div className="flex flex-col justify-center text-amiko capitalize text-center lg:text-start space-y-6 text-[#000]">
           <h2 className="font-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight">
-            <span className="text-[#6629DE]">Collaborate,</span> 
-            <br className="hidden sm:block" />Communicate, Succeed All in One Workspace
+            <span className="text-[#6629DE]">Collaborate,</span> Communicate,
+            <br className="hidden sm:block" /> Succeed All in One Workspace
           </h2>
           <p className="text-base sm:text-lg font-normal max-w-[360px] mx-auto lg:mx-0 opacity-90">
             Worksy brings your team together with seamless messaging, file
