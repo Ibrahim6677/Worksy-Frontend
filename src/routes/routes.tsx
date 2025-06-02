@@ -21,14 +21,6 @@ const router = createBrowserRouter([
   //   element: <Navigate to="/register" replace />,
   // },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
     path: "/",
     element: <Layout />,
     children: [
@@ -38,6 +30,15 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  
 ]);
 
 
