@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BannerImage from "../assets/images/bannerImage.svg"; // Adjust the path as necessary
+import BannerImage from "../assets/images/BannerImage.svg"; // Adjust the path as necessary
 const Banner = () => {
   return (
     <div className="flex items-center justify-around w-full">
