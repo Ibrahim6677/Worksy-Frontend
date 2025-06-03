@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import calender from "../assets/images/solar_calendar-outline.svg";
 import hdCalls from "../assets/images/si_mic-line.svg";
 import workspace from "../assets/images/carbon_workspace.svg";
@@ -6,30 +5,6 @@ import channel from "../assets/images/channel.svg";
 import files from "../assets/images/files.svg";
 
 const Collaboration = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  
-  const testimonials = [
-    {
-      name: "Emily Chen",
-      role: "Software Engineer",
-      image: "/avatar.png", // Make sure to add the correct image path
-      text: "The real-time collaboration features are outstanding. Our development team has seen a significant improvement in productivity since we started using this platform."
-    }
-    // Add more testimonials here if needed
-  ];
-
-  const handlePrev = () => {
-    setCurrentTestimonial((prev) => 
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentTestimonial((prev) => 
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
-  };
-
   return (
     <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden rounded-2xl bg-white py-12">
       {/* Background Shape */}
