@@ -6,14 +6,14 @@ import files from "../assets/images/files.svg";
 
 const Collaboration = () => {
   return (
-    <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden rounded-2xl bg-white py-12">
+    <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative rounded-2xl bg-white py-12">
       {/* Background Shape */}
       <div className="absolute inset-0 z-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 986 752"
           fill="none"
-          className="absolute bottom-10 right-0 w-full max-w-[700px] h-auto"
+          className="absolute bottom-10 -right-6 w-full max-w-[700px] h-auto"
         >
           <path
             d="M846.247 49.7987C803.85 95.0596 780.368 151.291 758.111 206.464C735.855 261.638 713.447 318.045 672.613 364.408C631.796 410.77 568.436 446.162 501.667 442.256C370.884 434.59 285.083 308.441 162.916 275.017C123.594 264.252 77.6031 265.632 44.8148 287.441C-1.05856 317.942 -6.41689 379.945 19.5181 424.941C45.4531 469.938 95.0891 500.704 145.716 524.774C184.602 543.263 225.234 558.933 267.06 571.591C319.77 587.525 376.897 599.949 416.387 634.387C466.443 678.047 456.18 712.22 428.7 744H986V0H909.186C885.62 13.8485 864.27 30.5606 846.247 49.7987Z"
