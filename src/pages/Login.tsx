@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from "../redux/features/auth/authSlice";
@@ -19,7 +18,9 @@ const Login = () => {
     password: string;
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
     if (!email || !password) {
       setErrorMessage("Please fill in all fields");
@@ -35,90 +36,90 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-around w-full h-screen capitalize">
-      <div className="flex flex-col items-center justify-center max-w-3xl h-[90vh] p-4 bg-[#EFE7FF] rounded-2xl shadow-[2px 2px 3px 3px #F6F1Fe]">
-        <header className="grid grid-cols-1 w-full p-8 items-center">
-          <div className="text-center flex items-center justify-center gap-2">
-            <img src={logo} alt="" />
-            <h1 className="text-2xl font-bold font-amiko cursor-pointer uppercase">
-              Worksy
-            </h1>
-          </div>
+    <div className="flex flex-col lg:flex-row items-center justify-center w-full min-h-screen px-4 py-8 gap-8">
+      {/* Left - Login Form */}
+      <div className="flex flex-col items-center justify-center w-full max-w-xl bg-[#EFE7FF] rounded-2xl shadow-[2px_2px_3px_3px_#F6F1Fe] p-6">
+        <header className="w-full flex justify-center items-center mb-4">
+          <img src={logo} alt="logo" />
+          <h1 className="text-2xl font-bold font-amiko uppercase ml-2">
+            Worksy
+          </h1>
         </header>
-        <section className="flex flex-col w-full max-w-3xl mx-auto px-4">
-          <h1 className="text-5xl text-center font-bold tracking-wide mb-4">
+
+        <section className="w-full px-2">
+          <h1 className="text-3xl sm:text-4xl text-center font-bold mb-2">
             Sign in To Worksy
           </h1>
-          <p className="text-md ml-2 text-gray-500 text-start">
-            enter your email address
+          <p className="text-sm sm:text-md text-gray-500 text-center p-2">
+            Enter your email address
           </p>
 
-          <div className="w-full max-w-md">
-            <form onSubmit={handleSubmit}>
-              <input
-                className="border rounded-2xl border-[#878787] p-2 text-lg text-[#888] text-amiko font-normal w-full focus:outline-none focus:ring-2 focus:ring-blue-400 mb-3"
-                type="email"
-                placeholder="name@work.com"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                className="border rounded-2xl border-[#878787] p-2 text-lg text-[#888] text-amiko font-normal w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                name="password"
-              />
-              <p className="text-md ml-2 text-[#a38bd2] underline text-start mt-2">
-                forget your password?
-              </p>
-              {errorMessage && (
-                <div className="text-red-500 text-sm mt-2">{errorMessage}</div>
-              )}
+          <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
+            <input
+              type="email"
+              name="email"
+              placeholder="name@work.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="border rounded-2xl border-[#878787] p-2 text-base w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="border rounded-2xl border-[#878787] p-2 text-base w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <p className="text-sm text-[#a38bd2] underline mt-2 text-left">
+              Forget your password?
+            </p>
+            {errorMessage && (
+              <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+            )}
+            <input
+              type="submit"
+              value="Get Started"
+              className="bg-[#6629DE] text-white rounded-2xl w-full mt-4 py-3 cursor-pointer hover:opacity-90 transition duration-300"
+            />
+          </form>
 
-              <input
-                className="border-none rounded-2xl w-full mt-4 bg-[#6629DE] p-3 text-white text-lg cursor-pointer hover:opacity-90 transition-opacity duration-300 hover:shadow-lg"
-                type="submit"
-                value="Get Started"
-              />
-            </form>
-
-            <div className="text-sm font-normal text-gray-500 mt-3 ml-2">
-              create a new account?
-              <Link className="text-[#a38bd2] underline ml-2" to="/register">
-                Sign up
-              </Link>
-            </div>
-            <div className="flex items-center w-full mt-6 mb-2">
-              <div className="flex-grow h-px bg-gray-300"></div>
-              <span className="px-4 text-sm text-gray-500">OR</span>
-              <div className="flex-grow h-px bg-gray-300"></div>
-            </div>
+          <div className="text-sm text-gray-500 mt-3 text-center">
+            Create a new account?
+            <Link to="/register" className="text-[#a38bd2] underline ml-1">
+              Sign up
+            </Link>
           </div>
 
-          <div className="flex flex-col justify-center items-center ">
-            <button className="border-1 rounded-[49px] border-[#E5E5E5] w-[300px] h-[50px] bg-white py-3 px-6 gap-2.5 text-lg text-black cursor-pointer hover:shadow-md mb-4 flex items-start justify-center">
+          <div className="flex items-center w-full mt-6 mb-2">
+            <div className="flex-grow h-px bg-gray-300"></div>
+            <span className="px-4 text-sm text-gray-500">OR</span>
+            <div className="flex-grow h-px bg-gray-300"></div>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <button className="flex items-center justify-center gap-2 border border-[#E5E5E5] rounded-full w-[90%] sm:w-[300px] h-[50px] bg-white mb-4 hover:shadow-md">
               <img src={googleIcon} alt="" />
-              <span className="text-[#444] text-Roboto text-lg font-medium">
+              <span className="text-[#444] text-sm font-medium">
                 Sign In With Google
               </span>
             </button>
-            <button className="border-1 rounded-[49px] border-[#E5E5E5] w-[300px] h-[50px] bg-white py-3 px-6 gap-2.5 text-lg text-black cursor-pointer hover:shadow-md mb-4 flex items-start justify-center">
+            <button className="flex items-center justify-center gap-2 border border-[#E5E5E5] rounded-full w-[90%] sm:w-[300px] h-[50px] bg-white mb-2 hover:shadow-md">
               <img src={micIcon} alt="" />
-              <span className="text-[#444] text-Roboto text-lg font-medium">
+              <span className="text-[#444] text-sm font-medium">
                 Sign In With Microsoft
               </span>
             </button>
           </div>
         </section>
       </div>
-      <div>
+
+      {/* Right - Login Illustration */}
+      <div className="hidden lg:block w-full max-w-sm">
         <img
           src={imgLogin}
-          className="max-w-[399.5px] max-h-[600.08px]"
-          alt=""
+          className="w-full h-auto object-contain"
+          alt="Login Illustration"
         />
       </div>
     </div>
