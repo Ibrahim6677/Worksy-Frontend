@@ -1,39 +1,42 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useLoginUserMutation } from "../redux/features/auth/authSlice";
+// import React, { useState } from "react";
+import {
+  Link,
+  useNavigate
+} from "react-router-dom";
+// import { useLoginUserMutation } from "../redux/features/auth/authSlice";
 import imgLogin from "../assets/images/Delivery _ order, account, transportation, subway, box, shopping.png";
 import logo from "../assets/images/Vector1.svg";
 import googleIcon from "../assets/images/Group.svg";
 import micIcon from "../assets/images/Group9.svg";
 const Login = () => {
   const navigate = useNavigate();
-  const [loginUser] = useLoginUserMutation();
+  // const [loginUser] = useLoginUserMutation();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
 
-  interface LoginFormInputs {
-    email: string;
-    password: string;
-  }
+  // interface LoginFormInputs {
+  //   email: string;
+  //   password: string;
+  // }
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ): Promise<void> => {
-    e.preventDefault();
-    if (!email || !password) {
-      setErrorMessage("Please fill in all fields");
-      return;
-    }
-    setErrorMessage("");
-    try {
-      await loginUser({ email, password } as LoginFormInputs).unwrap();
-      navigate("/home");
-    } catch {
-      setErrorMessage("Login failed. Please check your credentials.");
-    }
-  };
+  // const handleSubmit = async (
+  //   e: React.FormEvent<HTMLFormElement>
+  // ): Promise<void> => {
+  //   e.preventDefault();
+  //   if (!email || !password) {
+  //     setErrorMessage("Please fill in all fields");
+  //     return;
+  //   }
+  //   setErrorMessage("");
+  //   try {
+  //     await loginUser({ email, password } as LoginFormInputs).unwrap();
+  //     navigate("/home");
+  //   } catch {
+  //     setErrorMessage("Login failed. Please check your credentials.");
+  //   }
+  // };
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center w-full min-h-screen px-4 py-8 gap-8">
@@ -54,29 +57,34 @@ const Login = () => {
             Enter your email address
           </p>
 
-          <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              navigate("/");
+            }}
+            className="w-full max-w-md mx-auto">
             <input
               type="email"
               name="email"
               placeholder="name@work.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
               className="border rounded-2xl border-[#878787] p-2 text-base w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               type="password"
               name="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              // value={password}
+              // onChange={(e) => setPassword(e.target.value)}
               className="border rounded-2xl border-[#878787] p-2 text-base w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <p className="text-sm text-[#a38bd2] underline mt-2 text-left">
               Forget your password?
             </p>
-            {errorMessage && (
+            {/* {errorMessage && (
               <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
-            )}
+            )} */}
             <input
               type="submit"
               value="Get Started"
