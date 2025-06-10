@@ -29,14 +29,14 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className={`w-full transition-all duration-300 px-3 sm:px-4 md:px-6 lg:px-8 ${
+    <nav className={`w-full transition-all duration-300 px-4 sm:px-4 md:px-6 ${
       scrolled
         ? "fixed top-0 left-0 right-0 z-50 bg-[#6629DE] shadow-md rounded-b-lg sm:rounded-b-xl md:rounded-b-2xl lg:rounded-full lg:top-3 lg:max-w-[1380px] lg:mx-auto transition-all duration-300"
         : "relative bg-white"
     }`}>
       <div className="h-[60px] sm:h-[70px] md:h-[80px] flex items-center justify-between capitalize max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <Link to="/home" className="flex items-center gap-2">
             <div className="w-8 h-8 sm:w-10 sm:h-10">
               <img 

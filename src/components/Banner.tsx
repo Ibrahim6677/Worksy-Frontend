@@ -3,7 +3,7 @@ import BannerImage from "../assets/images/BannerImage.svg";
 
 const Banner = () => {
   return (
-    <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+    <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
       <div className="w-full lg:w-1/2 max-w-[600px] order-2 lg:order-1">
         <div className="flex flex-col justify-center text-amiko capitalize text-center lg:text-start space-y-6 text-[#000]">
           <h2 className="font-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight">

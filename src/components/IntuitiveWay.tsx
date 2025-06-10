@@ -13,36 +13,38 @@ const fileList = [
 
 const IntuitiveWay = () => {
   return (
-    <div className="max-w-[1380px] mx-auto lg:pl-18 px-4 relative lg:h-[800px] bg-white py-20 lg:py-30">
+    <div className="max-w-[1380px] mx-auto lg:pl-18 px-4 relative lg:h-[800px] bg-white py-20 lg:py-30 overflow-hidden">
       {/* SVG blob background */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="702"
-        height="638"
-        viewBox="0 0 702 698"
-        fill="none"
-        className="absolute -left-5 top-80 -translate-y-1/2 z-0 hidden lg:block"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M459.579 19.8458C542.749 48.4193 615.723 101.589 657.109 179.168C701.342 262.084 714.203 358.228 688.272 448.536C660.033 546.88 607.199 648.263 511.786 685.267C418.985 721.257 320.767 668.369 230.681 626.003C150.075 588.096 72.6149 540.79 33.962 460.556C-5.57935 378.478 -10.5628 281.955 24.4164 197.85C58.398 116.143 132.347 60.5369 214.267 27.0276C292.97 -5.16598 379.147 -7.78714 459.579 19.8458Z"
-          fill="url(#paint0_linear)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear"
-            x1="470.48"
-            y1="23.7514"
-            x2="239.008"
-            y2="636.722"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0.2" stopColor="#917CBA" />
-            <stop offset="0.89" stopColor="#413854" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <div className="absolute inset-0 overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="702"
+          height="638"
+          viewBox="0 0 702 698"
+          fill="none"
+          className="absolute -left-5 top-80 -translate-y-1/2 z-0 hidden lg:block max-w-none"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M459.579 19.8458C542.749 48.4193 615.723 101.589 657.109 179.168C701.342 262.084 714.203 358.228 688.272 448.536C660.033 546.88 607.199 648.263 511.786 685.267C418.985 721.257 320.767 668.369 230.681 626.003C150.075 588.096 72.6149 540.79 33.962 460.556C-5.57935 378.478 -10.5628 281.955 24.4164 197.85C58.398 116.143 132.347 60.5369 214.267 27.0276C292.97 -5.16598 379.147 -7.78714 459.579 19.8458Z"
+            fill="url(#paint0_linear)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear"
+              x1="470.48"
+              y1="23.7514"
+              x2="239.008"
+              y2="636.722"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.2" stopColor="#917CBA" />
+              <stop offset="0.89" stopColor="#413854" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
       {/* Main content */}
       <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-16">

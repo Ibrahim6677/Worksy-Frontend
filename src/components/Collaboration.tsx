@@ -6,9 +6,9 @@ import files from "../assets/images/files.svg";
 
 const Collaboration = () => {
   return (
-    <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative rounded-2xl bg-white py-12">
+    <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 relative rounded-2xl bg-white py-12 overflow-hidden">
       {/* Background Shape */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 986 752"
