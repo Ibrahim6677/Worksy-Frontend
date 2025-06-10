@@ -18,10 +18,10 @@ const IntuitiveWay = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="702"
-        height="698"
+        height="638"
         viewBox="0 0 702 698"
         fill="none"
-        className="absolute -left-20 top-1/2 -translate-y-1/2 z-0 hidden lg:block"
+        className="absolute -left-5 top-80 -translate-y-1/2 z-0 hidden lg:block"
       >
         <path
           fillRule="evenodd"
@@ -47,7 +47,7 @@ const IntuitiveWay = () => {
       {/* Main content */}
       <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-16">
         {/* File List Box */}
-        <div className="bg-white shadow-lg rounded-xl z-10 p-6 w-full max-w-sm">
+        <div className="bg-white shadow-lg rounded-xl z-10 p-6 w-full max-w-lg">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-base font-semibold text-black">Files</h2>
             <span className="bg-[#6629DE] text-white text-xs font-medium px-2 py-1 rounded-full">125</span>
